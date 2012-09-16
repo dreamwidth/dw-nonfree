@@ -514,7 +514,6 @@ function Page::print_default_stylesheet () {
     .module-section-one .module-navlinks li {
         display: inline;
         line-height: 2.3em;
-        list-style: none;
     }
 
     .module-section-one .module-navlinks li a {
@@ -561,12 +560,11 @@ function Page::print_default_stylesheet () {
     }
 
     .module-section-two ul {
-        list-style-type: none;
+        list-style: none;
         margin-left: 0.5em;
         padding: 0;
     }
     .module-section-two ul ul {
-        list-style-type: none;
         margin-left: 0.5em;
         padding: 0.5em;
     }
@@ -591,7 +589,6 @@ function Page::print_default_stylesheet () {
     .module-userprofile .icon-links li {
         display: inline;
         padding: 5px;
-        list-style: none;
     }
 
     .one-column .module-userprofile .module-content {
@@ -640,7 +637,6 @@ function Page::print_default_stylesheet () {
 
     .module-tags_cloud li, .tags_cloud li {
         display: inline;
-        list-style-type: none;
     }
 
     .entry, .comment, .text_noentries_day {
@@ -794,7 +790,6 @@ function Page::print_default_stylesheet () {
 
     .tag li {
         display: inline;
-        list-style: none;
         padding: 0;
     }
     *+html .tag li {
@@ -808,11 +803,9 @@ function Page::print_default_stylesheet () {
         clear: both;
     }
     .entry .metadata ul {
+        list-style: none;
         margin: 0;
         padding: 0;
-    }
-    .entry .metadata li {
-        list-style: none;
     }
     .entry .footer, .comment .footer {
         clear: both;
@@ -832,7 +825,6 @@ function Page::print_default_stylesheet () {
     .entry-management-links li, .entry-interaction-links li, 
     .comment-management-links li, .comment-interaction-links li {
         display: inline;
-        list-style: none;
         margin: 0;
         padding: 5px;
     }
@@ -1062,7 +1054,6 @@ function Page::print_default_stylesheet () {
 
     .sorting-options ul li {
         display: inline;
-        list-style: none;
         }
 
     .icons-container .icon {
@@ -1097,7 +1088,6 @@ function Page::print_default_stylesheet () {
 
     .icon-keywords ul li {
         display: inline;
-        list-style: none;
         padding: 0;
         }
 

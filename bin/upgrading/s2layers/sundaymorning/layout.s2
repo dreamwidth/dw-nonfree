@@ -533,7 +533,6 @@ q { font-style: italic;
 .module-section-one li {
     position: relative;
     display: inline;
-    list-style: none;
 }
 
 .module-section-one li a {
@@ -580,13 +579,12 @@ q { font-style: italic;
 
 .module-section-two ul,
 .module-section-three ul {
-    list-style-type: none;
+    list-style: none;
     margin-left: .5em;
     padding: 0;
 }
 .module-section-two ul ul,
 .module-section-two ul ul {
-    list-style-type: none;
     margin-left: .5em;
     padding: 0;
     margin-bottom: 0;
@@ -609,7 +607,6 @@ q { font-style: italic;
 
 .module-tags_cloud li, .tags_cloud li {
     display: inline;
-    list-style-type: none;
 }
 
 .module-userprofile .userpic img {
@@ -637,7 +634,6 @@ q { font-style: italic;
 .module-userprofile .icon-links li {
     display: inline;
     padding: 5px;
-    list-style: none;
 }
 .module-calendar {
     text-align: center;
@@ -789,7 +785,6 @@ $userpic_css
 
 .tag li {
     display: inline;
-    list-style: none;
     padding: 0;
 }
 
@@ -837,7 +832,6 @@ $userpic_css
 
 .entry-management-links li, .entry-interaction-links li, .comment-management-links li, .comment-interaction-links li {
     display: inline;
-    list-style: none;
     margin: 0;
     padding: 0 0 0 1em;
 }
@@ -1023,7 +1017,6 @@ $userpic_css
 
 .sorting-options ul li {
     display: inline;
-    list-style: none;
     }
 
 .icons-container .icon {
@@ -1058,7 +1051,6 @@ $userpic_css
 
 .icon-keywords ul li {
     display: inline;
-    list-style: none;
     padding: 0;
     }
 
