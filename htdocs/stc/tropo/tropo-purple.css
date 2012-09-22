@@ -281,7 +281,7 @@ table caption {
 }
 
 table.grid, table.grid td {
-    border: 1px solid #999;    
+    border: 1px solid #999;
 }
 
 .select-list li, .NotificationTable td {
@@ -409,6 +409,23 @@ div.ContextualPopup div.Inner a, div.ContextualPopup div.Inner a:visited {
     background: transparent !important;
 }
 
+/*S2 talkpage*/
+.comment .link, .entry .link {color: #111;} /*resets color so :before and :after elements don't get the anchor color*/
+
+.comment-wrapper-odd .header {
+    border-bottom: 1px solid #7e27c1;
+    border-right: 1px solid #7e27c1;
+    background-color: #c0c0c0;
+}
+.comment-wrapper-even .header {
+    border-bottom: 1px solid #d3afec;
+    border-right: 1px solid #d3afec;
+    background-color: #e2e2e2;
+}
+
+.screened .header {background-color: #B79BC2 !important;}
+
+/*bml talkpage*/
 .cmtbar.odd {
     border-bottom: 1px solid #7e27c1;
     border-right: 1px solid #7e27c1;
