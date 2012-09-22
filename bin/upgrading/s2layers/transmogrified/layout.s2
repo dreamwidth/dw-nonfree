@@ -831,7 +831,7 @@ function Page::print_default_stylesheet () {
     /* lets have a default */
     .entry-management-links li a, .comment-management-links li a,
     .comment-interaction-links .thread a {
-        background-image: url($*STATDIR/transmogrified/permalink.gif);
+        background-image: url($*STYLES_IMGDIR/transmogrified/permalink.gif);
         background-repeat: no-repeat;
         background-position: 0% 50%;
         padding-left: 14px;
@@ -839,31 +839,31 @@ function Page::print_default_stylesheet () {
 
     .entry-management-links .edit_entry a, .comment-management-links .delete_comment a,
     .comment-management-links .edit_comment a {
-        background-image: url($*STATDIR/transmogrified/edit.gif);
+        background-image: url($*STYLES_IMGDIR/transmogrified/edit.gif);
     }
     .entry-management-links .edit_tags a, .comment-interaction-links .parent a {
-        background-image: url($*STATDIR/transmogrified/tag.gif);
+        background-image: url($*STYLES_IMGDIR/transmogrified/tag.gif);
     }
     .entry-management-links .mem_add a, .entry-management-links .watch_comments a,
     .comment-management-links .watch_thread a {
-        background-image: url($*STATDIR/transmogrified/memories.gif);
+        background-image: url($*STYLES_IMGDIR/transmogrified/memories.gif);
     }
     .entry-management-links .link_prev a {
-        background-image: url($*STATDIR/transmogrified/previous.gif);
+        background-image: url($*STYLES_IMGDIR/transmogrified/previous.gif);
     }
     .entry-management-links .link_next a {
-        background-image: url($*STATDIR/transmogrified/next.gif);
+        background-image: url($*STYLES_IMGDIR/transmogrified/next.gif);
     }
     .entry-interaction-links li a, .entry-management-links .tell_friend a,
     .comment-interaction-links li a { 
-        background-image: url($*STATDIR/transmogrified/comment.gif);
+        background-image: url($*STYLES_IMGDIR/transmogrified/comment.gif);
         background-repeat: no-repeat;
         background-position: 0% 50%;
         padding-left: 14px;
         display: inline;
     }
     .comment-management-links .delete_comment a {
-        background-image: url($*STATDIR/transmogrified/delete.gif);
+        background-image: url($*STYLES_IMGDIR/transmogrified/delete.gif);
     }
 
     .entry .footer hr {
