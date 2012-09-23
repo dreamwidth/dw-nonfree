@@ -33,7 +33,7 @@ sub staff_page {
 }
 
 sub generate_staff_groups {
-    my $groups = YAML::Any::LoadFile( $LJ::HOME . "/etc/staff.yaml" );
+    my $groups = YAML::Any::LoadFile( LJ::resolve_file( "etc/staff.yaml" ) );
     # This takes the list of usernames, determines if they are a journal or a community
     # and makes a list of the ljuser_display under the proper type if the username exists
     # otherwise treats it as a journal, and just lists the plain text username.
