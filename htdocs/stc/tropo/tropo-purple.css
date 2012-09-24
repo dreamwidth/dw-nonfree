@@ -412,12 +412,12 @@ div.ContextualPopup div.Inner a, div.ContextualPopup div.Inner a:visited {
 /*S2 talkpage*/
 .comment .link, .entry .link {color: #111;} /*resets color so :before and :after elements don't get the anchor color*/
 
-.comment-depth-odd .header {
+.comment-depth-odd > .dwexpcomment .header {
     border-bottom: 1px solid #7e27c1;
     border-right: 1px solid #7e27c1;
     background-color: #c0c0c0;
 }
-.comment-depth-even .header {
+.comment-depth-even > .dwexpcomment .header {
     border-bottom: 1px solid #d3afec;
     border-right: 1px solid #d3afec;
     background-color: #e2e2e2;
