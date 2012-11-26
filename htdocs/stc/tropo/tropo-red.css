@@ -212,7 +212,7 @@ footer {
     border: 1px solid #c1272d;
 }
 
-.action-box .inner {
+.action-box .inner, .comment-page-list {
     color: #111;
     background-color: #ffafb6;
     border: 1px solid #c1272d;
