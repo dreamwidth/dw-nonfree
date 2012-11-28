@@ -149,6 +149,7 @@ propgroup fonts {
     property use font_module_text;
     property use font_module_text_size;
     property use font_module_text_units;
+    property use font_sources;
 }
 
 set font_base = "Verdana";
@@ -243,7 +244,7 @@ propgroup text {
     property use text_unwatch_comments;
     property use text_permalink;
     property use text_stickyentry_subject;
-    
+
     property use text_module_customtext;
     property use text_module_customtext_content;
     property use text_module_customtext_url;
@@ -334,7 +335,7 @@ function Page::print_default_stylesheet () {
 
     var string entry_background = generate_background_css ($*image_background_entry_url, $*image_background_entry_repeat, $*image_background_entry_position, $*color_entry_background);
     var string module_background = generate_background_css ($*image_background_module_url, $*image_background_module_repeat, $*image_background_module_position, $*color_module_background);
-   
+
     var string page_colors = generate_color_css($*color_page_text, $*color_main_background, $*color_page_border);
     var string page_title_colors = generate_color_css($*color_page_title, new Color, new Color);
 
@@ -395,7 +396,7 @@ function Page::print_default_stylesheet () {
 # Homegrown logic for entry and module colors to fit with Transmog specialist options for alternating
 
     """
-    /* believe me, this style is much easier to deal with if you 
+    /* believe me, this style is much easier to deal with if you
     just leave this here. It says "lets use the IE box model" for
     non IE browsers */
     * { box-sizing:border-box; -moz-box-sizing:border-box }
@@ -825,7 +826,7 @@ function Page::print_default_stylesheet () {
         padding: 0;
         display: inline;
     }
-    .entry-management-links li, .entry-interaction-links li, 
+    .entry-management-links li, .entry-interaction-links li,
     .comment-management-links li, .comment-interaction-links li {
         display: inline;
         margin: 0;
@@ -858,7 +859,7 @@ function Page::print_default_stylesheet () {
         background-image: url($*STYLES_IMGDIR/transmogrified/next.gif);
     }
     .entry-interaction-links li a, .entry-management-links .tell_friend a,
-    .comment-interaction-links li a { 
+    .comment-interaction-links li a {
         background-image: url($*STYLES_IMGDIR/transmogrified/comment.gif);
         background-repeat: no-repeat;
         background-position: 0% 50%;
