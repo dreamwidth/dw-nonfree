@@ -851,6 +851,11 @@ $userpic_css
 .entry .metadata-label {
     font-weight: bold;
 }
+
+.comment-posted {
+    font-weight:bold;
+}
+
 .full .comment-poster {
     display: inline-block;
     min-width: 40%;

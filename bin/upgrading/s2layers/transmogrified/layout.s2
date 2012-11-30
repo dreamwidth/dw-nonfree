@@ -681,6 +681,10 @@ function Page::print_default_stylesheet () {
         margin: 0;
     }
 
+    .comment-posted {
+        font-weight:bold;
+    }
+
     .entry-title a, .comment-title a {
         text-decoration: none;
     }
