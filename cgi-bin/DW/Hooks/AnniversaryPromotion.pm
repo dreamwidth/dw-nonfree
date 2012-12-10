@@ -59,7 +59,7 @@ LJ::Hooks::register_hook( 'shop_controller', sub {
 # put information after the cart is rendered
 LJ::Hooks::register_hook( 'shop_cart_render', sub {
     my ( $retref, %opts ) = @_;
-    return if $opts{admin};
+    return if $opts{admin} || ( $opts{receipt} &&  ! $opts{confirm} );
 
     # promo period and not anonymous
     return unless promo_valid();
