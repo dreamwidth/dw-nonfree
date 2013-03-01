@@ -46,5 +46,30 @@ LJ::Hooks::register_hook( 'entryforminfo', sub {
     
 } );
 
+LJ::Hooks::register_hook( 'faqlink', sub {
+    # This links to the specified faq with the specified link
+    # text -- not the faq title! -- in a new
+    # tab (because called from an iframe)
+    my ( $faqname, $text ) = @_;
+    my $ret;
+
+    # Keep a hash of faqnames => ids because that'll be
+    # nonfree-specific
+    my %faqs = (
+        "alttext" => 207, # "What's the description of an image for?"
+    );
+    my $faq = $faqs{$faqname};
+
+    my $faqobj = LJ::Faq->load ( $faq );
+    if ( ! $faqobj ) {
+        return;
+    }
+
+    $ret .= "<a target='blank' href='$LJ::SITEROOT/support/faqbrowse?faqid=" . $faq . "'>" .  $text . "</a>";
+
+    return $ret;
+} );
+
+
 1;
 
