@@ -4,20 +4,20 @@
             img: http://www.dreamwidth.org/userpic/256/6
             bio:
                 - |
-                    (the Suit) began working on the 
-                    LiveJournal.com project in 2001. Since then, she's done everything from 
-                    customer service to product planning to documentation to user advocacy 
-                    to QA testing to falling over exhausted because she's trying to do too 
-                    much at once. She left LiveJournal in 2007 to pursue a career in 
-                    writing. She hopes that with Dreamwidth Studios, she'll be able to use 
-                    her experience to create a place where creative people of all types will 
-                    find a home for their expression where they feel safe, welcomed, and 
+                    (the Suit) began working on the
+                    LiveJournal.com project in 2001. Since then, she's done everything from
+                    customer service to product planning to documentation to user advocacy
+                    to QA testing to falling over exhausted because she's trying to do too
+                    much at once. She left LiveJournal in 2007 to pursue a career in
+                    writing. She hopes that with Dreamwidth Studios, she'll be able to use
+                    her experience to create a place where creative people of all types will
+                    find a home for their expression where they feel safe, welcomed, and
                     supported.
                 - |
-                    Denise lives in Baltimore, Maryland, with her long-suffering 
-                    wife, who fortunately enjoys the frequent "c'mere, look, isn't 
-                    this <em>cool</em>?" invocations, and two cats, who don't care about the 
-                    internet as long as they get fed on time.
+                    Denise lives in Baltimore, Maryland, with her long-suffering
+                    wife, who fortunately enjoys the frequent "c'mere, look, isn't
+                    this <em>cool</em>?" invocations, and three cats, who don't care about
+                    the internet as long as they get fed on time.
             official:
                 - denise
                 - dw_biz
@@ -25,20 +25,20 @@
             img: http://www.dreamwidth.org/userpic/257/6
             bio:
                 - |
-                    (the Geek) began volunteering with LiveJournal.com 
-                    in 2001 in technical support and code development. He joined the staff 
-                    in 2004, concentrating both on feature development and backend 
-                    development, where he contributed heavily to utilities, such as Perlbal 
-                    and MogileFS, that are in wide use by many other sites. After 
-                    transitioning to Six Apart, Mark worked to design and build out the 
-                    systems infrastructure for the Vox.com product launch. In 2007, he moved 
-                    to Iceland to program for CCP Games' EVE Online, before moving back to 
-                    the US in early 2008 as a Senior Systems Administrator for the Mozilla 
-                    Corporation.
+                    (the Geek) began volunteering with LiveJournal.com in 2001 in technical
+                    support and code development. He joined the staff in 2004, where he
+                    contributed heavily to all areas of the site and worked on utilities
+                    such as Perlbal and MogileFS that are now used by many other web sites.
+                    After transitioning to Six Apart, Mark worked to design and build out
+                    the systems infrastructure for the Vox.com product launch.
                 - |
-                    Mark currently resides near San Francisco, CA with his wife Janine and
-                    their canine companions. From time to time, he can be heard on the air as
-                    KC8BCW, typically on the local 2M repeaters. 73s!
+                    Since those days, Mark has been a MySQL DBA, managed an operations team,
+                    and maintained a cadre of open source projects of his own while working
+                    for companies such as Google, Mozilla, and Bump.
+                - |
+                    He currently resides near San Francisco, CA with his partner, Ari, and
+                    their two small sons. In his free time, he enjoys motorcycles, tabletop
+                    and LARP gaming, and amateur radio (license KC8BCW).
             official:
                 - mark
                 - dw_dev
@@ -62,6 +62,39 @@
                     get pulled in too many directions at once.
             official:
                 - fu
+        -   name: MissKat
+            img: http://www.dreamwidth.org/userpic/5322645/294908
+            bio:
+                - |
+                    heads up the Dreamwidth Support team. She specializes in facilitating
+                    user/developer interactions, but enjoys just about everything Dreamwidth
+                    can throw at her. She was sucked into Support shortly before Open Beta in
+                    2009 after spending way too much time on IRC. She wasn't even supposed to
+                    BE here today!
+                - |
+                    In her spare time, Kat enjoys recreating history with the Society for Creative
+                    Anachronism, cooking tasty foods, napping, and playing "where did you stash
+                    mommy's socks?" with her ferrets, Hermes Horatio and Isaac.
+            official:
+                - misskat
+                - dw_support
+        -   name: Alierak
+            img: http://www.dreamwidth.org/userpic/314317/7805
+            bio:
+                - |
+                    is Dreamwidth's backup sysadmin on call, helping Mark wrangle servers
+                    and keeping an eye out for problems. He has approximately two decades of
+                    experience with Unix systems and open source, resulting in ninja-like reflexes
+                    for troubleshooting and bug hunting. He became <s>disillusioned</s> familiar
+                    with the LiveJournal codebase in 2006 when Brad announced a cross-site
+                    scripting contest offering permanent accounts for reporting security bugs
+                    (Alierak won three and maintains a healthy mistrust of our HTML cleaner).
+                - |
+                    He is also a sysadmin at a major university, husband and father of two, and
+                    enjoys building or fixing things, cooking, and playing with math. He can
+                    often be found singing or playing various instruments in church.
+            official:
+                - alierak
 -   name: Community Project Leaders
     note: "People who are currently working on major projects for Dreamwidth!"
     people:
@@ -69,21 +102,21 @@
             img: http://www.dreamwidth.org/userpic/529546/6
             bio:
                 - |
-                    came into the LiveJournal volunteer IRC channel during one
-                    of the early data center "power events" to find out what was going on.
-                    Denise obtained another minion shortly thereafter. Azz specializes in
-                    thoughtful analysis of any social media system she immerses herself in,
-                    and enjoys finding the root needs underlying any request for more bells
-                    and whistles, and thinking up a way to fulfil that need that fits in
-                    with the site's <cite>gestalt</cite> and actually could be implemented.
-                    She was in IRC not looking busy enough when Denise and Mark needed a
-                    team leader for spam, and now enjoys squashing spammers.
+                    came into the LiveJournal volunteer IRC channel during one of the early
+                    data center "power events" to find out what was going on. Denise obtained
+                    another minion shortly thereafter. Azz specializes in thoughtful analysis
+                    of any social media system she immerses herself in, and enjoys finding the
+                    root needs underlying any request for more bells and whistles, and thinking
+                    up a way to fulfil that need that fits in with the site's gestalt and actually
+                    could be implemented. She was in IRC not looking busy enough when Denise and
+                    Mark needed a team leader for spam, and now enjoys squashing spammers.
                 - |
-                    Azz lives in the foggy part of the San Francisco Bay Area. She
-                    dreamed of becoming a Communications Officer like Lt. Uhura when she was
-                    a child; now she spends much of her free time on IRC, on the phone with
-                    Kat, and having bizarre, one-sided conversations with the characters in
-                    her current draft novel.
+                    By day, Azz is a mild-mannered minion in the cloudy part of Silicon Valley
+                    (and lives in the foggy part of the Bay Area). She dreamed of becoming a
+                    Communications Officer like Lt. Uhura when she was a child; now she spends
+                    most of her commute using a suspiciously similar headset. Her hobbies include
+                    talking to Kat, crocheting, IRC, and having bizarre, one-sided conversations
+                    with the characters in her current draft novel.
             official:
                 - dw_antispam
         -   name: ChemicalLace
@@ -94,29 +127,11 @@
                     LiveJournal Support and Abuse teams from 2001-2003, where she met Mark and Denise,
                     and followed them to Dreamwidth during closed beta testing.
                 - |
-                    In the real world, ChemicalLace is a science graduate student who spends
+                    In the real world, ChemicalLace is a researcher who spends
                     most of her time in the lab.  During her rare trips home and outside, she enjoys
                     cooking, eating, reading, biking, scuba diving, and spending time with her cat.
             official:
                 - dw_support
-        -   name: John Chodan
-            img: http://www.dreamwidth.org/userpic/529528/6
-            bio:
-                - |
-                    joined up with Dreamwidth early in 2009 as a beta
-                    tester, but then started getting involved in more and more other things
-                    (including the occasional patch). Right now he heads up the Anti-Spam
-                    team and supports the volunteer Wiki, training other volunteers in both
-                    areas. His previous experience includes business and consumer technical
-                    support and administrating a card game service.
-                - |
-                    John is a full-time student (studying Business while preparing for
-                    law school) and a full-time husband and parent to two wonderful young
-                    girls. When not meeting the demands of his ladies he enjoys renaissance
-                    dance, building custom computers, photography, and cooking (and
-                    eating!).
-            official:
-                - dw_antispam
         -   name: DomTheKnight
             img: http://www.dreamwidth.org/userpic/2564/6
             bio:
@@ -159,20 +174,20 @@
             img: http://www.dreamwidth.org/userpic/261/6
             bio:
                 - |
-                    (the Information Architect) joined Dreamwidth
-                    because she's passionate about online community and user experiences, as
-                    evidenced by her work running the LJ community no_lj_ads. As Mistress of
-                    Project Organization, she has insatiable needs to collate and organize
-                    information of all kinds, mostly manifesting in the site wiki and stalking
+                    (the Information Architect) has insatiable needs to collate and organize
+                    information of all kinds, mostly manifesting in the site wiki and rallying
                     everyone to make sure things are properly documented and categorized. If
                     you ask her where someone put something, she can tell you in three seconds
-                    or less ... unless you mean her keys.
+                    or less ... unless you mean her keys.  This leaves her in an excellent
+                    position to assist new contributors. She also does development work, back to
+                    front and in between.
                 - |
                     Audra lives in Seattle, WA, where she works as a bioinformatics software
                     engineer, which involves sifting through massive amounts of data using code
                     and math for biology research.
             official:
                 - dw_wiki
+                - dw_styles
         -   name: Andrea Nall
             img: http://www.dreamwidth.org/userpic/262/6
             bio:
@@ -206,6 +221,17 @@
                     IRC with The Awesomest Girlfriend. He's a permanent resident of There. His
                     alignment shifts randomly between Useful Evil, Chaotic Punny,
                     and Ergative Absolutive.
+        -   name: Deborah
+            img: http://www.dreamwidth.org/userpic/5456520/37793
+            bio:
+                - |
+                    co-leads the accessibility team. She spends her time writing accessibility
+                    improvements for the Dreamwidth code, as well as educating the other developers
+                    and designers about accessibility. In her other life she works in library
+                    technology, where she's gained a reputation as That Person Who Will Glare
+                    at You If Your Library Software Isn't Accessible.
+            official:
+                - | dw_accessibility
         -   name: Ricky Buchanan
             img: http://www.dreamwidth.org/userpic/529540/6
             bio:
@@ -231,19 +257,3 @@
                     Sarah's superpowers include paying the bills on time, keeping the taxman
                     from battering down the door, and keeping the pantry she shares with
                     Denise well-stocked with Diet Coke with Lime.
-        -   name: Zarhooie
-            img: http://www.dreamwidth.org/userpic/529542/6
-            bio:
-                - |
-                    , also known as Kat, is &#8531; of the Dreamwidth Support Triumvirate.
-                    She specializes in volunteer training and wears her Tact Hat with pride
-                    and tenacity (whatever that means). Kat got sucked into Support shortly
-                    before Open Beta in April of 2009 after spending way too much time on IRC.
-                    She wasn't even supposed to BE here today!
-                - |
-                    In her copious spare time (HA), Kat is a full-time college student majoring
-                    in Religion. When not baking, cooking, knitting, sewing, studying, reading
-                    or composing, Kat enjoys playing rugby, messing around in the Society for
-                    Creative Anachronism, wearing stompy boots and sometimes even napping.
-            official:
-                - dw_support
