@@ -60,6 +60,8 @@ shop.annivpromo.nopoints=This order will not earn you any Dreamwidth Points as p
 
 shop.annivpromo.points=This order will earn you <strong>[[points]] Dreamwidth [[?points|Point|Points]]</strong> to spend on your next order as part of our Holiday Promotion.
 
+shop.cc.charge.from=If you are using someone else's credit card, make sure you get their permission first. Charges will appear on your statement from Dreamwidth Studios, LLC.
+
 shop.email.acct.body.end<<
 
 Best,
