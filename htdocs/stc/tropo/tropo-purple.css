@@ -49,12 +49,12 @@ a:link,
     color: #3a155a;
 }
 a:visited {
-    color: #000000;
+    color: #5e3da6;
 }
 a:hover,
 a:active,
 .link:hover {
-    color: #5e3da6;
+    color: #7836cb;
 }
 #canvas {
     background-color: #f7f7f7;
