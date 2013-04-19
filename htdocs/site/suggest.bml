@@ -15,7 +15,7 @@
 # Authors:
 #      Denise Paolucci <denise@dreamwidth.org>
 #
-# Copyright (c) 2009 by Dreamwidth Studios, LLC.
+# Copyright (c) 2009-2013 by Dreamwidth Studios, LLC.
 #
 # This program is NOT free software or open-source; you can use it as an
 # example of how to implement your own site-specific extensions to the
@@ -28,6 +28,7 @@ body<=
 <?_code
 {
     use strict;
+    use LJ::Entry;
     use vars qw/ %POST @errors @warnings /;
 
     # for pages that require authentication
@@ -137,7 +138,10 @@ body<=
             # through moderation.) for this post, we tag it as 
             # "admin: unmigrated", so the suggestions maintainer can find
             # any/all unposted bugzilla links.
-    
+
+            my $e = LJ::Entry->new_from_url( $journalpost->{url} );
+            my ( $year, $mon, $mday, $hour, $min ) = split( /\D/, $e->eventtime_mysql || "" );
+
             my $bugzillapost = LJ::Protocol::do_request( 'postevent', {
                 'ver'             => $LJ::PROTOCOL_VER,
                 'username'        => $suggestions_bot->user,
@@ -147,7 +151,15 @@ body<=
                 'security'        => 'private',
                 'usejournal_okay' => 1,
                 'props'           => { 'taglist' => 'admin: unmigrated' },
-                'tz'              => 'guess',
+
+                # make sure the time matches for both admin entry and public entry
+                # for easier admin tracking
+                'year'            => $year,
+                'mon'             => $mon,
+                'day'             => $mday,
+                'hour'            => $hour,
+                'min'             => $min,
+
                 }, \$response2, {
                 'nopassword'      => 1,
                 } );
