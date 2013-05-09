@@ -1,0 +1,32 @@
+#!/bin/sh
+
+username=$1;
+password=$2;
+domain=$3;
+
+if [ -z "$username" ]
+then
+    echo "Github username: "
+    read -r username
+fi
+
+if [ -z "$password" ]
+then
+    echo "Github password: "
+    read -r -s password
+fi
+
+if [ -z "$domain" ]
+then
+    echo "Your SITEROOT: (http://www.blah.com)"
+    read -r domain
+fi
+
+if [ -z "$username" -o -z "$password" -o -z "$domain" ]
+then
+    echo "Incomplete information. Make sure you've entered the Github username & password, and your siteroot" >&2
+    exit 1
+fi
+
+url="$domain/interface/github"
+curl -i -v -u "$username:$password" -d "{\"name\":\"web\",\"config\":{\"url\":\"$url\"},\"events\":[\"push\",\"pull_request\"]}" "https://api.github.com/repos/$username/dw-nonfree/hooks"

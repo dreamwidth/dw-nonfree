@@ -113,6 +113,20 @@
             end_time    => "Inf",
         },
     );
+
+    %GITHUB = (
+        bugzilla => {
+            username => '',
+            password => '',
+            server   => 'bugs.dwscoalition.org',
+        },
+        changelog => {
+            username => '',
+            password => '',
+        }
+    );
+
+
 }
 
 1;
