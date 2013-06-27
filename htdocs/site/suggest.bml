@@ -137,7 +137,12 @@ body<=
             # through moderation.) for this post, we tag it as 
             # "admin: unmigrated", so the suggestions maintainer can find
             # any/all unposted bugzilla links.
-    
+
+            # get the user's timzeone and put it into +/-0800 format
+            # if we can't figure it out, then just guess based on suggestions bot
+            my ( $remote_tz_sign, $remote_tz_offset ) = ( $remote->timezone =~ m/([+|-])?(\d+)/ );
+            my $remote_tz = defined $remote_tz_offset ? sprintf( "%s%02d00", $remote_tz_sign || "+", $remote_tz_offset ) : "guess";
+
             my $bugzillapost = LJ::Protocol::do_request( 'postevent', {
                 'ver'             => $LJ::PROTOCOL_VER,
                 'username'        => $suggestions_bot->user,
@@ -147,7 +152,7 @@ body<=
                 'security'        => 'private',
                 'usejournal_okay' => 1,
                 'props'           => { 'taglist' => 'admin: unmigrated' },
-                'tz'              => 'guess',
+                'tz'              => $remote_tz,
                 }, \$response2, {
                 'nopassword'      => 1,
                 } );

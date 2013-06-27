@@ -669,19 +669,8 @@ q { font-style: italic;
     word-wrap: break-word;
 }
 
-.module-credit dl {
-    margin: 0 1em;
-}
-.module-credit dt, .module-credit dd {
-    padding: 0;
-    margin: 0;
-    display: block;
-}
-.module-credit dt {
-    float: left;
-    clear: left;
+.module-credit .category-title {
     font-weight: bold;
-    margin-right: .5em;
 }
 .module-customtext .module-content {
     padding: 0 .5em;

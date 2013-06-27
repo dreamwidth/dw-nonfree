@@ -84,7 +84,7 @@ body<=
  </ul><br />
 
 <h2>Source Code</h2><br />
- <ul><li>The <a href='http://hg.dwscoalition.org/'>source code</a> for Dreamwidth Studios is based on code developed and maintained by LiveJournal.com. Code in the dw-free repository authored by LiveJournal is released under the GNU General Public License. Code in the dw-free repository authored by Dreamwidth Studios, LLC is dual-released under the GPL and Artistic Licenses.</li>
+ <ul><li>The <a href='https://github.com/dreamwidth/'>source code</a> for Dreamwidth Studios is based on code developed and maintained by LiveJournal.com. Code in the dw-free repository authored by LiveJournal is released under the GNU General Public License. Code in the dw-free repository authored by Dreamwidth Studios, LLC is dual-released under the GPL and Artistic Licenses.</li>
  <li>Code in the dw-nonfree repository is source-available but not Open Source. You may not use code from the dw-nonfree repository to run a production site. You may only use code from the dw-nonfree repository in a development environment for the purposes of improving the source code. If your development environment is publicly web-accessible, you may only use code from the dw-nonfree repository with our express written permission.</li>
  <li>If you are running a production site based on the Dreamwidth code, please let us know! We would like to add a link to your site to our <a href='http://www.dreamwidth.org/site/opensource'>Open Source</a> page.</li>
 </ul><br />

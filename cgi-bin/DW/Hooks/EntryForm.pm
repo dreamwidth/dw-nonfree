@@ -58,14 +58,13 @@ LJ::Hooks::register_hook( 'faqlink', sub {
     my %faqs = (
         "alttext" => 207, # "What's the description of an image for?"
     );
+    return unless exists $faqs{$faqname};
+
     my $faq = $faqs{$faqname};
+    my $faqobj = LJ::Faq->load( $faq )
+        or return;
 
-    my $faqobj = LJ::Faq->load ( $faq );
-    if ( ! $faqobj ) {
-        return;
-    }
-
-    $ret .= "<a target='blank' href='$LJ::SITEROOT/support/faqbrowse?faqid=" . $faq . "'>" .  $text . "</a>";
+    $ret .= "<a target='blank' href='$LJ::SITEROOT/support/faqbrowse?faqid=$faq'>$text</a>";
 
     return $ret;
 } );
