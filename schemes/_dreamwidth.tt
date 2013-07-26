@@ -19,7 +19,7 @@ the same terms as Perl itself.  For a copy of the license, please reference
 [%- IF ! logo_path %]
 [%- logo_path = BLOCK -%]/[% logo_path_part %]/dw_logo_[% logo_path_part %].png[%- END - %]
 [%- END -%]
-<a href="[% site.root %]/"><img src='[% imgprefix %][% logo_path %]' /></a>
+<a href="[% site.root %]/"><img alt="Dreamwidth Studios" src='[% imgprefix %][% logo_path %]' /></a>
 [%- END -%]
 
 [%- BLOCK block.footer -%]
