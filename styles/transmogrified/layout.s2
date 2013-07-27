@@ -934,10 +934,6 @@ function Page::print_default_stylesheet () {
         display: none;
         }
 
-    .page-read .navigation.empty {
-        display: block;
-        }
-
     .month-wrapper, #archive-month dl {
         padding: 10px;
         position: relative;
