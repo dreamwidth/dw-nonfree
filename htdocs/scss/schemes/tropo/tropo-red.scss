@@ -58,7 +58,7 @@ $small-font-color:                     $body-font-color;
 $code-color:                           lighten( $body-font-color, 30% );
 
 // We use these to style anchors
-$anchor-text-decoration:               "underline";
+$anchor-text-decoration:               underline;
 $anchor-font-color:                    #c1272d;
 $anchor-font-color-visited:            shade( $anchor-font-color, 30% );
 $anchor-font-color-hover:              lighten( $anchor-font-color, 30% );
