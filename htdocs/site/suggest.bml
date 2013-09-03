@@ -24,6 +24,7 @@
 #
 
 _c?><?page
+title=>Suggest an Improvement
 body<=
 <?_code
 {
@@ -249,6 +250,7 @@ body<=
                                 rows => 3,
                                 cols => 100,
                                 wrap => 'soft',
+                                class => 'expand',
                                 value => $POST{summary}
                               } );
 
@@ -256,11 +258,13 @@ body<=
     $ret .= "<h2>Full Description</h2><p>The full description of your idea. Be as specific and detailed as you can. Tell us what issue or area your suggestion is intended to improve, why you think your specific suggestion is the best solution, what problems or drawbacks your suggestion might have if it's implemented, and if there are any other ways you can think to accomplish what you'd like to improve that could also be considered. The more detail you provide, the better chances your suggestion has of being implemented.</p>";
     $ret .= LJ::html_textarea( { 
                                 name => 'description',
-                                rows => 20,
+                                rows => 15,
                                 cols => 100,
                                 wrap => 'soft',
+                                class => 'expand',
                                 value => $POST{description}
                               } );
+	
 
     # does the user want to be notified of comments?
     $ret .= "<p><label for='email' class='left options'>" . "Notify me of comments" . "</label>";
@@ -283,5 +287,16 @@ body<=
 }
 _code?>
 <=body
-title=>Suggest an Improvement
+head<=
+
+<?_code
+{
+    use strict;
+    
+    LJ::set_active_resource_group( 'jquery' );
+    LJ::need_res( { group => 'jquery' }, 'js/jquery/jquery.autogrow-textarea.js' );
+    
+}
+_code?>
+<=head
 page?>
