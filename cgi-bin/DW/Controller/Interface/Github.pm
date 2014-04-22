@@ -23,7 +23,10 @@ use LJ::JSON;
 use Digest::HMAC_SHA1 ();
 
 DW::Routing->register_string( "/interface/github", \&hooks_handler,
-                                app => 1, methods => { POST => 1 } );
+                                app => 1,
+                                prefer_ssl => 1,
+                                methods => { POST => 1 },
+                            );
 
 my %table = (
     ping            => [ \&respond_to_ping ],
