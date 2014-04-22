@@ -41,7 +41,9 @@ sub label_from_comment {
     my $payload = $_[0];
 
     my @labels = _extract_labels( $payload->{comment}->{body} );
-    _replace_labels( $payload->{issue}->{number}, @labels );
+    my $is_pull_request = exists $payload->{issue}->{pull_request};
+
+    _replace_labels( $payload->{issue}->{number}, $is_pull_request, @labels );
 }
 
 sub label_from_new_issue {
@@ -51,7 +53,9 @@ sub label_from_new_issue {
     my $issue = $payload->{issue};
 
     my @labels = _extract_labels( $issue->{body} );
-    _replace_labels( $issue->{number}, @labels );
+    push @labels, "status: untriaged" unless @labels;
+
+    _replace_labels( $issue->{number}, 0, @labels );
 }
 
 sub label_from_new_pull_request {
@@ -61,9 +65,9 @@ sub label_from_new_pull_request {
     my $pr = $payload->{pull_request};
 
     my @labels = _extract_labels( $pr->{body} );
-    push @labels, "is: pull request";
+    push @labels, "status: untriaged" unless @labels;
 
-    _replace_labels( $pr->{number}, @labels );
+    _replace_labels( $pr->{number}, 1, @labels );
 }
 
 # labels are in the form of: "##label" "##prefix:label"
@@ -99,8 +103,11 @@ sub _extract_labels {
 }
 
 sub _replace_labels {
-    my ( $issue_num, @labels ) = @_;
+    my ( $issue_num, $is_pull_request, @labels ) = @_;
     return unless @labels;
+
+    # automatically add labels (but only if we're modifying labels in the first place)
+    push @labels, ( $is_pull_request ? "type: pull request" : "type: issue" );
 
     my $ua = LJ::get_useragent( role => 'github' );
     $ua->agent( $LJ::SITENAME );
