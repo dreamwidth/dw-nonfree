@@ -46,7 +46,7 @@ sub label_from_comment {
     my @labels = _extract_labels( $payload->{comment}->{body} );
     my $is_pull_request = exists $payload->{issue}->{pull_request};
 
-    _replace_labels( $payload->{issue}->{number}, $is_pull_request, @labels );
+    _replace_labels( $payload->{issue}->{url}, $is_pull_request, @labels );
 }
 
 sub label_from_new_issue {
@@ -58,7 +58,7 @@ sub label_from_new_issue {
     my @labels = _extract_labels( $issue->{body} );
     push @labels, "status: untriaged" unless @labels;
 
-    _replace_labels( $issue->{number}, 0, @labels );
+    _replace_labels( $issue->{url}, 0, @labels );
 }
 
 sub label_from_new_pull_request {
@@ -70,7 +70,7 @@ sub label_from_new_pull_request {
     my @labels = _extract_labels( $pr->{body} );
     push @labels, "status: untriaged" unless @labels;
 
-    _replace_labels( $pr->{number}, 1, @labels );
+    _replace_labels( $pr->{issue_url}, 1, @labels );
 }
 
 # labels are in the form of: "##label" "##prefix:label"
@@ -106,7 +106,7 @@ sub _extract_labels {
 }
 
 sub _replace_labels {
-    my ( $issue_num, $is_pull_request, @labels ) = @_;
+    my ( $issue_url, $is_pull_request, @labels ) = @_;
     return unless @labels;
 
     # automatically add labels (but only if we're modifying labels in the first place)
@@ -115,11 +115,10 @@ sub _replace_labels {
     my $ua = LJ::get_useragent( role => 'github' );
     $ua->agent( $LJ::SITENAME );
 
-    my $auth = $LJ::GITHUB{api_token} . ':x-oauth-basic';
-
     # replace all labels in the issue
-    my $res = $ua->put( "https://${auth}\@api.github.com/repos/afuna/dw-free/issues/$issue_num/labels",
-                        Content => to_json( \@labels ) );
+    my $res = $ua->put( "$issue_url/labels",
+                        Content => to_json( \@labels ),
+                        Authorization => "token $LJ::GITHUB{api}->{token}" );
     return $res && $res->is_success ? 1 : 0;
 }
 
@@ -128,7 +127,7 @@ sub hooks_handler {
     my $body = $r->content;
 
     # Check received SHA1 digest if shared secret configured
-    my $salt = $LJ::GITHUB{gh_signature};
+    my $salt = $LJ::GITHUB{api}->{gh_signature};
     if ( defined $salt ) {
         my $received_SHA1 = $r->header_in( 'X-Hub-Signature' );
         if ( defined $received_SHA1 and $received_SHA1 =~ s/^sha1=//i ) {
