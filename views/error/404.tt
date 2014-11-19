@@ -1,65 +1,18 @@
-<?page
-body<=
-<?_code
-{
-    # Local 404 error page
-    #
-    # Authors:
-    #     Pau Amma <pauamma@dreamwidth.org>
-    #     + individual contributors for their respective quotes (see below)
-    #
-    # Copyright (c) 2009 by Dreamwidth Studios, LLC.
-    #
-    # This program is NOT free software or open-source; you can use it as an
-    # example of how to implement your own site-specific extensions to the
-    # Dreamwidth Studios open-source code, but you cannot use it on your site
-    # or redistribute it, with or without modifications.
-    #
+[%# Local 404 error page
 
-    use strict;
-    use warnings;
-    use vars qw( $title $windowtitle $headextra );
+Authors:
+    Pau Amma <pauamma@dreamwidth.org>
+    Afuna <coder.dw@afunamatata.com>
 
-    $windowtitle = "Page not found";
+This program is free software; you may redistribute it and/or modify it under
+the same terms as Perl itself.  For a copy of the license, please reference
+'perldoc perlartistic' or 'perldoc perlgpl'.
+%]
 
-    my @quips = (
-        "I accidentally your page :(",
-        "Invisible Content!",
-        "We can't stop here... this is 404 country!",
-        "Not found page is not found.",
-        "That's no moon - it's a 404!",
-        "Fetch, or fetch not. There is no 404",
-        "Quoth the server: four oh four.",
-        "Tonight, we browse in 404!",
-        "Curse your sudden but inevitable 404!",
-        "404: the lights have gone out. Careful, you might get eaten by a grue.",
-        "Why did the 404 cross the road? Because it couldn't find a page to cross.",
-        "404: the page is a lie.",
-        "404 ALL the things?",
-        "Never gonna run around and 404 you...",
-        "THERE ... ARE ... 404 ... LIGHTS!",
-        "We'll always have 404.",
-        "The sky above the port was the color of television tuned to a 404'd page.",
-        "There was a PAGE here. it's gone now.",
-        "Oh dear.",
-        "It's dangerous to browse alone! Take this.",
-        "Thank you, Mario! But the page is in another castle.",
-        "Holy flying 404, Batman!",
-        "KHAAAAAAAAAAAANNNNNNNNNNN!",
-        "What is your quest? 404!",
-        "But WHY is the page gone?",
-        "Ia! Ia! 404 fthagn!",
-        "418 I'm A Teapot ... wait, no, 404 Not Found.",
-        "i'm in ur server, 404ing ur pages",
-        "These are not the 404s you're looking for.",
-        "Heisenberg may or may not have 404ed here.",
-    );
+[%- sections.windowtitle = "Page not found" -%]
+[%- sections.title = quip -%]
+[%- CALL dw.active_resource_group( "foundation" ) -%]
 
-    $title = $quips[int( rand( scalar @quips ) )];
-
-    my $ret;
-
-    $ret .= <<PAGE;
 <p>We can't find that page. If you entered the URL directly or pasted it into your browser's address bar, make sure you didn't typo, paste too little, or paste too much. If you followed a link, you may want to report this to the maintainer of the page that linked you here.</p>
 
 <p>If you believe this URL is correct, please check our <a href="http://twitter.com/dreamwidth">offsite status page</a> to see if we're aware of the problem. If we haven't updated it, <a href="http://www.downforeveryoneorjustme.com/dreamwidth.org">check to see if it's just a problem for you</a>. If it isn't, don't worry -- we'll fix it as soon as we can!</p>
@@ -121,15 +74,3 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 -->
-PAGE
-
-    return $ret;
-}
-_code?>
-<=body
-windowtitle=><?_code return $windowtitle; _code?>
-title=><?_code return $title; _code?>
-head<=
-<?_code return $headextra; _code?>
-<=head
-page?>
