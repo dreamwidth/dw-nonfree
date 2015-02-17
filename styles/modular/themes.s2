@@ -18,6 +18,7 @@ set color_page_link_visited = "#60A000";
 set color_page_text = "#000";
 set color_page_title = "#e4502e";
 set color_header_background = "#f4e7d9";
+set color_header_link = "#e4502e";
 set color_footer_background = "#f4e7d9";
 
 ##===============================
@@ -57,14 +58,14 @@ set image_background_header_url = "layouts/nano-badge2010.png";
 set image_background_header_repeat = "no-repeat";
 
 function Page::print_theme_stylesheet() {
-    """
-    #header {
-        background-position: 99% center;
-        min-height: 95px;
-        }
+"""
+#header {
+    background-position: 99% center;
+    min-height: 95px;
+}
 
-    #title, #subtitle, #pagetitle {
-        margin-right: 125px;
-        }
-    """;
+#title, #subtitle, #pagetitle {
+    margin-right: 125px;
+}
+""";
 }

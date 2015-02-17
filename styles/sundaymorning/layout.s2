@@ -15,6 +15,8 @@ propgroup presentation {
     property use use_journalstyle_entry_page;
     property use layout_type;
     property use sidebar_width;
+    property use medium_breakpoint_width;
+    property use large_breakpoint_width;
     property use reverse_sortorder_group;
     property use reg_firstdayofweek;
     property use tags_page_type;
@@ -101,6 +103,9 @@ propgroup fonts {
     property use font_journal_title;
     property use font_journal_title_size;
     property use font_journal_title_units;
+    property use font_journal_subtitle;
+    property use font_journal_subtitle_size;
+    property use font_journal_subtitle_units;
     property use font_entry_title;
     property use font_entry_title_size;
     property use font_entry_title_units;
@@ -238,6 +243,7 @@ function Page::print()
     <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>""";
+        $this->print_meta_tags();
         $this->print_head();
         $this->print_stylesheets();
         $this->print_head_title();
@@ -247,11 +253,10 @@ function Page::print()
     """
     <div id="container">
         <div id="header">
-            <a name="top">
     """;
                 $this->print_global_title();
+                $this->print_global_subtitle();
     """
-            </a>
         </div>
     """;
         $this->print_module_section("one");
@@ -293,6 +298,9 @@ function Page::print()
 }
 
 function Page::print_default_stylesheet() {
+    var string medium_media_query = generate_medium_media_query();
+    var string large_media_query = generate_large_media_query();
+
     var string sidebar_position = "";
     var string sidebar_position_alt = "";
     var string image_background_page_position = "100% 70px";
@@ -338,6 +346,7 @@ function Page::print_default_stylesheet() {
 
     var string page_font = generate_font_css("", $*font_base, $*font_fallback, $*font_base_size, $*font_base_units);
     var string page_title_font = generate_font_css($*font_journal_title, $*font_base, $*font_fallback, $*font_journal_title_size, $*font_journal_title_units);
+    var string page_subtitle_font = generate_font_css($*font_journal_subtitle, $*font_base, $*font_fallback, $*font_journal_subtitle_size, $*font_journal_subtitle_units);
     var string entry_title_font = generate_font_css($*font_entry_title, $*font_base, $*font_fallback, $*font_entry_title_size, $*font_entry_title_units);
     var string comment_title_font = generate_font_css($*font_comment_title, $*font_base, $*font_fallback, $*font_comment_title_size, $*font_comment_title_units);
     var string module_font = generate_font_css($*font_module_text, $*font_base, $*font_fallback, $*font_module_text_size, $*font_module_text_units);
@@ -388,7 +397,7 @@ function Page::print_default_stylesheet() {
         }
 """
 /* believe me, this style is much easier to deal with if you
-just leave this here. It says "let's use the IE box model" for
+just leave this here. It says \"let's use the IE box model\" for
 non IE browsers */
 * { box-sizing:border-box; -moz-box-sizing:border-box }
 
@@ -435,38 +444,40 @@ q { font-style: italic;
 
 #header h1 {
     margin: 0;
-    padding: 1em;
+    padding: .5em 1em;
     $page_title_font
 }
 
 #header h2 {
-    padding: 0 1em 1em 1em;
+    padding: 0 1em .75em 1.4em;
+    margin: 0;
+    $page_subtitle_font
 }
 
 #wrap {
     $page_colors
 }
 
-#wrap,
-.two-columns #bottom {
-    padding-$sidebar_position_alt: 200px; /* Fixed: to display the bkg image */
+#wrap {
     padding-top: 10px;
+    margin: 0 2em;
 }
 
-.one-column #wrap,
-.one-column #bottom {
-    margin-left: 2em;
-    margin-right: 2em;
+#bottom {
+    margin: 1em 2em 0 2em;
 }
 
-.one-column #bottom {
-    margin-top: 1em;
-}
+@media $medium_media_query {
+    .two-columns #wrap, .two-columns #bottom {
+        margin: 0;
+        margin-$sidebar_position: $*sidebar_width;
+        padding-$sidebar_position_alt: 200px; /* Fixed: to display the bkg image */
+        padding-$sidebar_position: 60px;
+    }
 
-.two-columns #wrap,
-.two-columns #bottom {
-    margin-$sidebar_position: $*sidebar_width;
-    padding-$sidebar_position: 60px;
+    .two-columns #bottom {
+        padding-top: 10px;
+    }
 }
 
 #content {
@@ -487,24 +498,21 @@ q { font-style: italic;
 }
 
 .module-section-two {
-    width: $*sidebar_width;
-    max-width: $*sidebar_width;
     $module_base_colors
-}
-
-.two-columns .module-section-two {
-    position: absolute;
-    $sidebar_position: 2em;
-    top: 8em;
-}
-
-.one-column .module-section-two {
-    width: auto;
-    max-width: none;
 }
 
 .one-column-split .module-section-two {
     margin-bottom: 1em;
+}
+
+@media $medium_media_query {
+    .two-columns .module-section-two {
+        width: $*sidebar_width;
+        max-width: $*sidebar_width;
+        position: absolute;
+        $sidebar_position: 2em;
+        top: 9em;
+    }
 }
 
 .module-section-three {
@@ -513,25 +521,21 @@ q { font-style: italic;
 
 .module-section-one ul {
     $module_base_colors
-    margin: 0;
-    margin-top: 1.5em;
-    padding: .5em;
+    margin: 1.5em 0 0 2em;
+    padding: .5em 0;
 }
 
-.one-column .module-section-one ul {
-    margin-left: 2em;
-    padding-left: 0;
-    padding-right: 0;
-}
+@media $medium_media_query {
+    .two-columns .module-section-one ul {
+        margin-left: 0;
+        margin-$sidebar_position: $*sidebar_width;
+        padding-$sidebar_position: 60px;
+        padding-$sidebar_position_alt: 0;
+    }
 
-.two-columns .module-section-one ul {
-    margin-$sidebar_position: $*sidebar_width;
-    padding-$sidebar_position: 60px;
-    padding-$sidebar_position_alt: 0;
-}
-
-.two-columns-right .module-section-one ul {
-    text-align: right;
+    .two-columns-right .module-section-one ul {
+        text-align: right;
+    }
 }
 
 .module-section-one li {
@@ -647,19 +651,13 @@ q { font-style: italic;
     margin-right: auto;
 }
 
-.module-search .search-box { margin: .5em 0; width: 100%; }
+.module-search .search-box { margin: .5em 0; }
+.module-search .search-form { margin: .5em; }
 
-.one-column .module-search .search-box,
-.module-section-three .module-search .search-box {
-    width: auto;
-    }
-
-.module-search .search-form { margin: .5em; text-align: right; }
-
-.one-column .module-search .search-form,
-.module-section-three .module-search .search-form {
-    text-align: left;
-    }
+@media $medium_media_query {
+    .two-columns .module-section-two .module-search .search-box { width: 100%; }
+    .two-columns .module-section-two .module-search .search-form { text-align: right; }
+}
 
 /* wrap long content, particularly openid usernames */
 .module-pagesummary .ljuser {
@@ -766,6 +764,25 @@ $userpic_css
 }
 .entry-content, .comment-content {
     padding: 10px 0;
+}
+
+/* ensure comment content stretches out horizontally so it's readable */
+.comment-content:before {
+    content: "";
+    display: block;
+    overflow: hidden;
+    width: 10em;
+}
+.comment-content { border-top: 1px transparent solid; } /* for firefox */
+
+/* To constrain the width and prevent layout breaking */
+.entry-content img, .comment-content img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media $large_media_query {
+    .entry-content img, .comment-content img { max-width: none; }
 }
 .tag {
     font-weight: bold;

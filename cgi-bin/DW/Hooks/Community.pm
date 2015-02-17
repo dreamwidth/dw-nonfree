@@ -8,7 +8,7 @@
 # Authors:
 #      Denise Paolucci <denise@dreamwidth.org>
 #
-# Copyright (c) 2011 by Dreamwidth Studios, LLC.
+# Copyright (c) 2011-2013 by Dreamwidth Studios, LLC.
 #
 # This program is NOT free software or open-source; you can use it as an
 # example of how to implement your own site-specific extensions to the
@@ -57,7 +57,7 @@ LJ::Hooks::register_hook( 'community_search_links', sub {
     my $promo = LJ::load_user( "dw_community_promo" );
     return unless $promo;
 
-    $ret .= "<li>" . $promo->ljuser_display . ": " . BML::ml( '.promo.explain' ) . "</li>";
+    $ret .= "<li>" . $promo->ljuser_display . ": " . LJ::Lang::ml( '/community/index.tt.promo.explain' ) . "</li>";
     return $ret;
 } );
 
@@ -70,14 +70,15 @@ LJ::Hooks::register_hook( 'official_comms', sub {
     my $ret;
     my @official = qw/ dw_news dw_maintenance dw_biz dw_suggestions dw_nifty dw_dev dw_styles dw_design /;
 
-    $ret .= "<div style='clear:both'><h2>" . BML::ml( '.official.title', { sitename => $LJ::SITENAMESHORT } ) . "</h2>" . BML::ml( '.official.explain', { sitename => $LJ::SITENAMESHORT } ) . "<ul>";
+    $ret .= "<h2>" . LJ::Lang::ml( '/community/index.tt.official.title', { sitename => $LJ::SITENAMESHORT } ) . "</h2>"
+            . LJ::Lang::ml( '/community/index.tt.official.explain', { sitename => $LJ::SITENAMESHORT } ) . "<ul>";
 
     foreach my $comm ( @official ) {
         my $commu = LJ::load_user( $comm );
         $ret .= "<li>" . $commu->ljuser_display . "</li>" if $commu;
     }
 
-    $ret .= "</ul></div>";
+    $ret .= "</ul>";
 
     return $ret;
 } );

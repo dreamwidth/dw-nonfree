@@ -256,7 +256,7 @@ footer {
     background-color: #f3d2fc;
     color: #000;
 }
-.error-box {
+.error-box, .alert-box {
     color: #000;
     background-color: #fcf6db;
     border: 1px solid #ffdfc0;
@@ -569,3 +569,33 @@ select.select,
 #qrformdiv table {
     border: 1px solid #999;
 }
+
+/* MonthPage */
+
+#archive-month .navigation li, #archive-month .navigation a { display: inline; }
+
+#archive-month .navigation a {
+    font-weight: bold;
+    background-color: transparent;
+    color: #3a155a;
+}
+
+#archive-month .navigation a:visited {
+    color: #000000;
+}
+#archive-month .navigation a:hover,
+#archive-month .navigation a:active {
+    color: #5e3da6;
+}
+
+#archive-month .highlight-box {margin: auto; text-align: center;display: inline-block;}
+#archive-month {text-align: center;}
+#archive-month .month {text-align: left;}
+#archive-month h3.entry-title {display: inline; font-size:1em;font-weight: normal;}
+
+#archive-month .entry-title, #archive-month .access-filter, #archive-month .poster {margin-left:1em;}
+#archive-month .empty {margin: 0;}
+#archive-month .datetime {font-style: italic;}
+#archive-month .tag li {display: inline; list-style:none;}
+
+
