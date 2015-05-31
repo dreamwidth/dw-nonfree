@@ -83,6 +83,10 @@ $list-side-margin:                      1em;
 // we want to base these on $body-font-color rather than the random variables they're based on
 $blockquote-font-color:                 tint( $body-font-color, 20% );
 
+// Explicitly enabled and disabled text
+$enabled-color:          $text-color;
+$disabled-color:         $strong-accent-color;
+
 // We use these to style anchors1
 $anchor-text-decoration:               underline;
 $anchor-font-color:                    $link-color;
