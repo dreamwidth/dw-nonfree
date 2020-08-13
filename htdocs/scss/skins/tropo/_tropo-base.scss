@@ -39,14 +39,29 @@ $header-height: 7em;
     margin: 0;
     border-style: solid;
     border-width: 1em 0;
-    @supports (display: flex) { // exclude IE11 bc it can't handle min-height + flex-direction: column
-        min-height: 100vh;
-    }
 }
 
-#canvas, #page {
-  display: flex;
-  flex-direction: column;
+// You know the colored stripe at the very bottom of the page? The following is
+// a hack to position it at the bottom of the viewport on pages that are less
+// than one full viewport high, so that it doesn't appear in the middle of the
+// screen (i.e. at the bottom of the [short] content). Screen only, bc on
+// print it will cut content off after a single page.
+@media screen {
+    // exclude IE11 bc it can't handle min-height + flex-direction: column.
+    @supports (display: flex) {
+        #canvas, #page {
+          display: flex;
+          flex-direction: column;
+        }
+
+        #canvas {
+            min-height: 100vh;
+        }
+
+        #content, #page {
+          flex-grow: 1;
+        }
+    }
 }
 
 #page {
@@ -56,11 +71,6 @@ $header-height: 7em;
     width: 100%;
     margin: 0 auto;
 }
-
-#content, #page {
-  flex-grow: 1;
-}
-
 
 /**
  * Masthead is the space for our logo and account links
