@@ -780,6 +780,10 @@ $userpic_css
 }
 .comment-content { border-top: 1px transparent solid; } /* for firefox */
 
+.comment .admin-poster {
+    white-space: nowrap;
+}
+
 .tag {
     font-weight: bold;
     text-align: left;

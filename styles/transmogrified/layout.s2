@@ -691,6 +691,10 @@ function Page::print_default_stylesheet () {
         font-weight:bold;
     }
 
+    .comment .admin-poster {
+        white-space: nowrap;
+    }
+
     .entry-title a, .comment-title a {
         text-decoration: none;
     }
